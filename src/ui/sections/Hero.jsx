@@ -11,9 +11,8 @@ import Button from "../components/Button";
 import AnimatedButton from "../components/AnimatedButton";
 
 const socialLinks = [
-  { icon: Github, href: "#" },
-  { icon: Linkedin, href: "#" },
-  { icon: Twitter, href: "#" },
+  { icon: Github, href: "https://github.com/DevProjectJourney" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/christopher-bradwell-b7065092/" },
 ]
 
 export default function Hero() {
@@ -38,7 +37,7 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <div className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+            <div className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in animation-delay-100">
               <h1>
                 Building <span className="text-primary gloaw-text">digital</span>
                 <br />
@@ -46,7 +45,7 @@ export default function Hero() {
                 <br />
                 <span className="text-normal italic text-white">precision</span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg">Hi, I'm Chris Bradwell - a email marketing executive ....</p>
+              <p className="text-lg text-muted-foreground max-w-lg">Hi, I'm Chris Bradwell - an email marketing executive specialising in makreting automation platforms. With experience in all digital marketing modules.</p>
             </div>
 
             {/* CTAs */}
@@ -58,10 +57,42 @@ export default function Hero() {
                 Download CV
               </AnimatedButton>
             </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              <span className="text-sm text-muted-foreground">Follow me:</span>
+              {socialLinks.map((social, idx) => (
+                <a href={social.href} key={idx} className="p-2 rounded-full glass hover:bg-secondary/20 hover:text-primary transition-all duration-300">{<social.icon className="w-5 h-5" />}</a>
+              ))}
+            </div>
           </div>
 
           {/* Right Content - Profile Image */}
-          <div></div>
+          <div className="relative">
+            <div className="relative max-w-md mx-auto">
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/40 via-transparent to-primary/20 blur-2xl" />
+
+              <div className="relative glass rounded-3xl p-2 glow-border">
+                <img src="/profile-photo.jpg" alt="Chris Bradwell" className="w-full aspect-[4/5] object-cover rounded-2xl" />
+
+                {/* Floating Badges */}
+                <div className="absolute -bottom-4 -right-4 glass animate-float px-4 py-3 rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stats Badge */}
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3">
+                  <div className="text-2xl font-bold text-primary">8+ </div>
+                  <div className="text-xs text-muted-foreground">Years Exp.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
