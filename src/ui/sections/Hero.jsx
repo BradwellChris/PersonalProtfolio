@@ -1,18 +1,14 @@
-
-import {
-  ArrowRight,
-  ChevronDown,
-  Github,
-  Linkedin,
-  Twitter,
-  Download,
-} from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiFrontendmentor } from "react-icons/si";
+import { FiArrowRight } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
 import Button from "../components/Button";
 import AnimatedButton from "../components/AnimatedButton";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/DevProjectJourney" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/christopher-bradwell-b7065092/" },
+  { icon: FaGithub, href: "https://github.com/DevProjectJourney" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/in/christopher-bradwell-b7065092/" },
+  { icon: SiFrontendmentor, href: "" },
 ]
 
 export default function Hero() {
@@ -37,24 +33,22 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <div className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in animation-delay-100">
-              <h1>
-                Building <span className="text-primary gloaw-text">digital</span>
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-fade-in animation-delay-100">
+                Nice to <span className="text-primary gloaw-text">meet you</span>
                 <br />
-                campaigns with
-                <br />
-                <span className="text-normal italic text-white">precision</span>
+                I'm <span className="text-normal italic text-white">Chris Bardwell</span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg">Hi, I'm Chris Bradwell - an email marketing executive specialising in makreting automation platforms. With experience in all digital marketing modules.</p>
+              <p className="text-lg text-muted-foreground max-w-lg">An experienced email and digital marketing executive, seeking to leverage my skills in a new role.</p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
-              <Button>
-                Contact Me <ArrowRight className="w-5 h-5" />
+              <Button size="md">
+                Contact Me <FiArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedButton>
-                Download CV
+                <FiDownload className="w-5 h-5" /> Download CV
               </AnimatedButton>
             </div>
 
@@ -73,7 +67,7 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/40 via-transparent to-primary/20 blur-2xl" />
 
               <div className="relative glass rounded-3xl p-2 glow-border">
-                <img src="/profile-photo.jpg" alt="Chris Bradwell" className="w-full aspect-[4/5] object-cover rounded-2xl" />
+                <img src="/profile-photo.jpg" alt="Chris Bradwell" className="w-full aspect-4/5 object-cover rounded-2xl" />
 
                 {/* Floating Badges */}
                 <div className="absolute -bottom-4 -right-4 glass animate-float px-4 py-3 rounded-xl">

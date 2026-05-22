@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #1e1e2e;
+  --color-background: #24273a;
   --color-foreground: #cdd6f4;
 
-  --color-primary: #cba6f7;
+  --color-primary: #8aadf4;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #b4befe;
-  --color-secondary-foreground: ;
+  --color-secondary: #91d7e3;
+  --color-secondary-foreground: #74c7ec;
 
-  --color-muted: #313244;
+  --color-muted: #363a4f;
   --color-muted-foreground: #a6adc8;
 
-  --color-border: #181825;
+  --color-border: #949cbb;
 
-  --color-surface: #11111b;
+  --color-surface: #5b6078;
 
   --color-error: ;
   --color-success: ;
@@ -24,6 +24,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  li {
+    list-style-type: circle;
   }
 
   button {
@@ -40,9 +44,9 @@
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 20%, transparent);
+    background-color: color-mix(in srgb, var(--color-surface) 30%, transparent);
     backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-border) 25%, transparent);
   }
 
   .glass-strong {
@@ -61,7 +65,6 @@
 }
 
 @layer utilities {
-
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -93,16 +96,6 @@
 
     75% {
       transform: translate(30px, 10px);
-    }
-  }
-
-  @keyframes animated-border {
-    0% {
-      stroke-dashoffset: 400;
-    }
-
-    100% {
-      stroke-dashoffset: -550;
     }
   }
 
@@ -168,8 +161,14 @@
     animation-delay: 800ms;
   }
 
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+
+    100% {
+      stroke-dashoffset: -550;
+    }
   }
 
   .group:hover .animated-border-path {

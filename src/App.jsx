@@ -1,5 +1,9 @@
 import Navbar from "./ui/layouts/Navbar"
+import About from "./ui/sections/About"
+import Contact from "./ui/sections/Contact"
+import Experience from "./ui/sections/Experience"
 import Hero from "./ui/sections/Hero"
+import Projects from "./ui/sections/Projects"
 
 function App() {
   return (
@@ -7,6 +11,10 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Contact />
       </main>
     </div>
   )

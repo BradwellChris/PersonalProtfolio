@@ -1,7 +1,8 @@
-import { Menu, X } from "lucide-react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Button from "../components/Button";
+import { IoClose } from "react-icons/io5";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -25,7 +26,8 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 transition-all duration-500 ${isScrolled ? "py-3 glass-strong" : "bg-transparent py-5"} z-50`}>
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <a className="text-xl font-bold tracking-tight hover:text-primary" href="#">CB<span className="text-primary">.</span></a>
+        <img src='/logo-image.jpeg' alt='Logo Image' className="w-10 h-10 rounded-full" />
+        {/* <a className="text-xl font-bold tracking-tight hover:text-primary" href="#">CB<span className="text-primary">.</span></a> */}
 
         {/* Desktop Navbar */}
         <div className="hidden md:flex items-center gap-2">
@@ -42,7 +44,7 @@ export default function Navbar() {
 
         {/* Mobile Nav Button */}
         <button className="md:hidden block text-foreground p-2 cursor-pointer" onClick={() => setIsMobileNavOpen((prev) => !prev)}>
-          {isMobileNavOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileNavOpen ? <IoClose size={24} /> : <AiOutlineMenu size={24} />}
         </button>
       </nav>
 

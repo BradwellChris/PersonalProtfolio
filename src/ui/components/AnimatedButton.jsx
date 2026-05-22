@@ -22,7 +22,7 @@ export default function AnimatedButton({ children }) {
           className="animated-border-path"
         />
       </svg>
-      <span className="relative z-10 flex items-center justify-centergap-2">
+      <span className="relative z-10 flex items-center justify-center gap-2">
         {children}
       </span>
     </button>
